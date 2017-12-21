@@ -11,11 +11,11 @@ const puppeteer = require('puppeteer');
     console.log("Usage: node pdf.js [url] [filename] ")
   }else{
     const url = process.argv[2]
-    const filename = process.argv[3] || 'html-pdf'
+    const filename = process.argv[3] ? process.argv[3] : 'html-pdf'
     page.setViewport({width: 1024, height: 769, isMobile: false} )
     await page.goto(url, {waitUntil: 'networkidle2'});
     await page.pdf({
-      path: filename+'.pdf',
+      path: "public/pdf/"+filename+'.pdf',
       width: '14.7in',
       height: '10.27in',
       printBackground: true,

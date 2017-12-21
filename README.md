@@ -21,9 +21,14 @@ cd html-pdf
 yarn install
 ``````
 
-run 
+Run 
 ```
-node pdf.js [url] [filename]
+node server.js 
+```
+
+Test
+```
+http://localhost:3000/pdf/[filename]?url=[url]
 
 ```
 
